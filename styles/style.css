@@ -1,5 +1,321 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--main-text-font, sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: var(--main-text-color);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.for-decorations {
+  position: relative;
+}
+
+.header,
+.footer {
+  block-size: 100vh;
+  display: grid;
+  padding: var(--padding);
+  min-block-size: 668px;
+}
+
+.header {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.for-decorations::after,
+.for-decorations::before {
+  content: '';
+  display:inline-block;
+  inline-size: 1.5625rem;
+  block-size: 1.5625rem;
+  position: absolute;
+}
+
+.for-decorations::before {
+  left: var(--padding);
+  bottom: var(--padding);
+  border-inline-start: 1px solid var(--header-theme-menu-color);
+  border-block-end: 1px solid var(--header-theme-menu-color);
+}
+
+.for-decorations::after {
+  right: var(--padding);
+  top: var(--padding);
+  border-inline-end: 1px solid var(--header-theme-menu-color);
+  border-block-start: 1px solid var(--header-theme-menu-color);
+}
+
+.title,
+.footer__text {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+  line-height: 0.825;
+  color: var(--title-color);
+  text-align: start;
+}
+
+.header__title {
+  text-shadow: 0.25rem 0.25rem 0 var(--accsent-shadow);
+}
+
+.header__dark-scenery,
+.header__theme-menu {
+  color: var(--header-theme-menu-color);
+}
+
+.header__dark-scenery {
+  position: absolute;
+  top: var(--padding);
+  right: calc(2*var(--padding));
+  line-height: 1.39;
+}
+
+.header__dark-scenery::after {
+  content: '';
+  display: inline-block;
+  inline-size: 0.5em;
+  block-size: 0.5em;
+  margin-block-end: calc((1em - 0.5em - 4px) / 2);
+  background-color: var(--header-theme-menu-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--header-theme-menu-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  text-align: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.header__theme-menu-button {
+  inline-size: 4.375rem;
+  block-size: 1.625rem;
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  line-height: 1;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--header-theme-menu-color);
+}
+
+.header__theme-menu-button:hover,
+.header__theme-menu-button:active {
+  border: 1px solid var(--button-hover);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--header-theme-menu-color);
+  pointer-events: none;
+  cursor: default;
+}
+
+.header__subtitle {
+  white-space: pre-line;
+}
+
+.subtitle {
+  block-size: min-content;
+  inline-size: 100%;
+  align-self: center;
+  color: var(--subtitle-color);
+  font-size: inherit;
+  font-weight: bold;
+  line-height: 1.3;
+  background-color: var(--subtitle-background-color);
+}
+
+.section__title {
+  color: var(--section-title-color);
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.main__list-item_title {
+  font-weight: normal;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 0.125rem 0.125rem 0 var(--accsent-shadow);
+  cursor: pointer;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+}
+
+.link:hover,
+.link:active {
+  border-block-end: 1.5px solid var(--main-text-color);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-sections-gap);
+  padding: var(--intersection-padding) var(--padding);
+}
+
+.main__section,
+.main__list,
+.section__content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.main__section,
+.section__content {
+  gap: var(--section-block-gap);
+}
+
+.main__list {
+  gap: var(--main-list-item-gap);
+}
+
+.main__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-list-item-content-gap);
+}
+
+.main__section_pictures {
+  gap: var(--main-list-item-content-gap);
+}
+
+.main__list-pictures {
+  gap: var(--main-list-item-content-gap);
+}
+
+.main__list-picture {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  place-items: center;
+}
+
+.footer__text {
+  text-shadow: 0.125rem 0.125rem 0 var(--accsent-shadow);
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: var(--padding) 0;
+  }
+
+  .header,
+  .footer {
+    min-block-size: 1024px;
+  }
+
+  .header__dark-scenery {
+    right: calc(1.5 * var(--padding));
+  }
+
+  .header__theme-menu {
+    margin-inline-end: var(--padding);
+  }
+
+  .header__subtitle {
+    margin-inline-end: var(--padding);
+    inline-size: calc(50% - var(--padding));
+    justify-self: end;
+  }
+
+  .main__section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .main__section-title .section__title {
+    grid-row: 1 / auto;
+  }
+
+  .main__section-title .main__list {
+    grid-row: 2 / auto;
+    grid-column: 1 / -1;
+  }
+
+  .main__section_pictures {
+    grid-template-columns: 1fr;
+    gap: var(--main-list-item-gap);
+  }
+
+  .main__list-pictures {
+    gap: var(--main-list-item-gap);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.83fr 1fr 1.38fr;
+    grid-auto-flow: row dense;
+  }
+
+  .main__list-item-sunset,
+  .main__list-item-street {
+    grid-column: span 2;
+  }
+
+  .main__list-item-ice-cream,
+  .main__list-item-tape {
+    grid-row: span 2;
+  }
+}
+
+@media (width >= 1024px) {
+  .header,
+  .footer {
+    min-block-size: 768px;
+  }
+  
+  .header__theme-menu {
+    margin-inline-end: 0;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .main__section,
+  .main__section-title .main__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main__list,
+  .section__content {
+    grid-column: span 2;
+  }
+
+  .section__content,
+  .main__section_pictures {
+    column-gap: 0;
+  }
+
+  .main__section_pictures {
+    grid-template-columns: 1fr;
+    row-gap: var(--main-list-item-gap);
+  }
 }

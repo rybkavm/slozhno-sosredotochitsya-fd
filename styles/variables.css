@@ -1,4 +1,39 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --fucsia: #FF0070;
+  --opacity-fucsia: #FF007066;
+  --pink: #F1B2CE;
+  --light-pink: #FFC2E6;
+  --dark-pink: #FF8DCB;
+  --purple: #DB00FF;
+  --pastelle: #FFF1F7;
+  --dark-grey: #353430;
+  --opacity-dark-grey: #32312D66;
+  --bark-blue: #000028;
+  --main-text-font: 'IBM Plex mono';
+  --main-text-font-size: 1.125rem;
+  --subtitles-font-size: 1.125rem;
+  --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  --intersection-padding: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
+  --main-sections-gap: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
+  --section-block-gap: 1.25rem;
+  --main-list-item-gap: 1.25rem;
+  --main-list-item-content-gap: 0.625rem;
+  --main-text-color: var(--pink);
+  --title-color: var(--purple);
+  --section-title-color: var(--fucsia);
+  --header-theme-menu-color: var(--fucsia);
+  --button-hover: var(--opacity-fucsia);
+  --subtitle-color: var(--bark-blue);
+  --background-color: var(--bark-blue);
+  --background-image: url(../images/cover-image-dark.png);
+  --subtitle-background-color: var(--fucsia);
+  --accsent-shadow: var(--fucsia);
+}
+
+@media (width >= 768px) {
+  :root {
+    --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --section-title-inline-size: calc((100% - var(--padding) * 2 - var(--section-block-gap)) / 3);
+  }
+}

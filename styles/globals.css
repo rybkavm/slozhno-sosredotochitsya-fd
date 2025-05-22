@@ -1,9 +1,11 @@
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
 }
 
 body {
@@ -35,6 +37,7 @@ picture {
 
 button,
 a {
+  cursor: pointer;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
