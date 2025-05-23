@@ -11,7 +11,7 @@
   --accsent-shadow: var(--dark-pink);
 }
 
-.theme-light .page .header .header__dark-scenery {
+.theme-light .page .header .header__logo {
   display: none;
 }
 
@@ -29,7 +29,7 @@
     --accsent-shadow: var(--dark-pink);
   }
 
-  .theme-auto .page .header .header__dark-scenery {
+  .theme-auto .page .header .header__logo {
     display: none;
   }
 }
